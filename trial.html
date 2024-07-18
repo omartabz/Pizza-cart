@@ -1,0 +1,39 @@
+<div id="container" x-data='pizzaCart'>
+    <div class="shop">
+        <h3 id="pizza-status"></h3>
+            <h2 style="text-align: center;">Shopping Cart</h2>
+            <div class="sizes">
+                <span class="size"> Small </span>
+                <button class="plus" style="font-size: larger;" x-on:click="total+=49.99">+</button>
+                <button class="minus" style="font-size: larger;"
+                    x-on:click="total = Math.max(total - 49.99, 0)">-</button>
+                <span class="amount"> 49.99 </span>
+            </div>
+            <div class="sizes">
+                <span class="size"> Medium </span>
+                <button class="plus" style="font-size: larger;" x-on:click="total+=89.99">+</button>
+                <button class="minus" style="font-size: larger;"
+                    x-on:click="total = Math.max(total - 89.99, 0)">-</button>
+                <span class="amount"> 89.99 </span>
+            </div>
+            <div class="sizes">
+                <span class="size"> Large </span>
+                <button class="plus" style="font-size: larger;" x-on:click="total+=129.99">+</button>
+                <button class="minus" style="font-size: larger;"
+                    x-on:click="total = Math.max(total - 129.99, 0)">-</button>
+                <span class="amount"> 129.99 </span>
+            </div>
+            <h3 style="text-align: center;">Total cost: <span x-text="total.toFixed(2)"></span></h3>
+            <h3 style="float:inline-start">Payment Amount <input type="number" class="theInputValue" id="payment-amount" x-model="amount"></h3>
+
+            <h3 id="checkout-status"></h3>
+            <div class="sizes">
+                <b><button class="CheckOut" style="font-size: larger;" @click="checkoutMessage">Check Out</button></b>
+            </div>
+            <div class="sizes">
+                <b><button class="Pay" style="font-size: larger;" @click="change">Pay</button></b>
+            </div>
+
+        </div>
+
+<script src="trial.js"></script>
